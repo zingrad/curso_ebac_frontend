@@ -33,10 +33,10 @@
 
     <script>
       document.addEventListener("DOMContentLoaded", function(){
+      
         const endpoint = 'https://api.github.com/users/zingrad';
-
-
         fetch(endpoint)
+        
         .then(function (response) {
             return response.json()
         })
@@ -58,6 +58,8 @@
           document.querySelector('#following').innerHTML = following;
           document.querySelector('.profile-link').href = userUrl;
 
+        }).catch(function(error) {
+            Alert('Houve um erro')
         })
 
       })
