@@ -1,27 +1,26 @@
-function LiteraryWork(name, author) {
-    this.name = name;
-    this.author = author;
+const alunos = [{nome:"Erick",
+nota:7},{nome:"josé",nota:8},{nome:"fernanda", nota :3},{nome:"josué", nota :5}]
+
+
+
+const alunosQuePassaram = alunos.filter(function(alunos){
+    if(alunos.nota >= 6 ){
+       return alunos
+    }else{
+        console.log(`${alunos.nome} você não passou de ano`)
+    }
+    
+})
+
+function alunosQuePassaram2(){
+    alunos.filter(function(alunos){
+        if(alunos.nota >= 6 ){
+            console.log(`${alunos.nome} você passou de ano com nota: ${alunos.nota}`)
+        }else{
+            console.log(`${alunos.nome} você não passou de ano`)
+        }
+    })
 }
 
-
-
-function Book (name,author,genre,isSaga){
-    LiteraryWork.call(this,name,author);
-    this.genre = genre;
-   this.isSaga = isSaga;
-}
-
-
-function Manga  (name,author,genre,volumes,isItFinished){
-    LiteraryWork.call(this,name,author);
-    this.genre = genre;
-    this.volumes = volumes; 
-    this.isItFinished = isItFinished;
-}
-
-const Manga1 = new Manga("Death Note","Takeshi Obata","Supernatural",12,true);
-const Book1 = new Book("Lords Of The Ring","J. R. R. Tolkien","Fantasy",true);
-const Manga2 = new Manga("Hunter x Hunter","Yoshihiro Togashi","Shonen",34,false);
-console.log(Manga1);
-console.log(Book1);
-console.log(Manga2);
+alunosQuePassaram2()
+console.log(alunosQuePassaram)
